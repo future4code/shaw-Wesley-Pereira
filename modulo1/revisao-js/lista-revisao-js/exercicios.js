@@ -8,10 +8,10 @@ function retornaTamanhoArray(array) {
    return array.length
 // }
 
-// // EXERCÍCIO 02
-// function retornaArrayInvertido(array) {
-//   return array.reverse()
-// }
+// EXERCÍCIO 02
+function retornaArrayInvertido(array) {
+  return array.reverse()
+}
 
 // // EXERCÍCIO 03
 // function retornaArrayOrdenado(array) {
