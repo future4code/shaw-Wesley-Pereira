@@ -6,42 +6,43 @@
 // EXERCÍCIO 01
 function retornaTamanhoArray(array) {
    return array.length
-}
+// }
 
-// EXERCÍCIO 02
-function retornaArrayInvertido(array) {
-  return array.reverse()
-}
+// // EXERCÍCIO 02
+// function retornaArrayInvertido(array) {
+//   return array.reverse()
+// }
 
-// EXERCÍCIO 03
-function retornaArrayOrdenado(array) {
-  const ordem = array.sort((a, b) => a - b);
-  return ordem
-}
+// // EXERCÍCIO 03
+// function retornaArrayOrdenado(array) {
+//   const ordem = array.sort((a, b) => a - b);
+//   return ordem
+// }
 
-// EXERCÍCIO 04
-function retornaNumerosPares(array) {
-  const numeroPar = function(numero){
-  return numero % 2 == 0
-  }
-  let pares = array.filter(numeroPar);
-  return pares
+// // EXERCÍCIO 04
+// function retornaNumerosPares(array) {
+//   const numeroPar = function(numero){
+//   return numero % 2 == 0
+//   }
+//   let pares = array.filter(numeroPar);
+//   return pares
   
-}
+// }
 
 
-// EXERCÍCIO 05
-function retornaNumerosParesElevadosADois(array) {
-   const numeroParElevado = numero => {
-   return numero % 2 == 0
- }
-   let paresElevado = array.filter(numeroParElevado)
-   return paresElevado
-}
+// // EXERCÍCIO 05
+// function retornaNumerosParesElevadosADois(array) {
+//    const numeroParElevado = numero => {
+//    return numero % 2 == 0
+//  }
+//    let paresElevado = array.filter(numeroParElevado)
+//    return paresElevado
+// }
 
-// EXERCÍCIO 06
-function retornaMaiorNumero(array) {
-  return Math.max.apply(Math, array)
+
+// // EXERCÍCIO 06
+// function retornaMaiorNumero(array) {
+//   return Math.max.apply(Math, array)
 }
 
 // EXERCÍCIO 07
