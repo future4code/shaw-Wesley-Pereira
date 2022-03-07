@@ -19,15 +19,15 @@ function retornaArrayOrdenado(array) {
   return ordem
 }
 
-// // EXERCÍCIO 04
-// function retornaNumerosPares(array) {
-//   const numeroPar = function(numero){
-//   return numero % 2 == 0
-//   }
-//   let pares = array.filter(numeroPar);
-//   return pares
+// EXERCÍCIO 04
+function retornaNumerosPares(array) {
+  const numeroPar = function(numero){
+  return numero % 2 == 0
+  }
+  let pares = array.filter(numeroPar);
+  return pares
   
-// }
+}
 
 
 // // EXERCÍCIO 05
