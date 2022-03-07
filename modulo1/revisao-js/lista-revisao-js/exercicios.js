@@ -30,14 +30,14 @@ function retornaNumerosPares(array) {
 }
 
 
-// // EXERCÍCIO 05
-// function retornaNumerosParesElevadosADois(array) {
-//    const numeroParElevado = numero => {
-//    return numero % 2 == 0
-//  }
-//    let paresElevado = array.filter(numeroParElevado)
-//    return paresElevado
-// }
+// EXERCÍCIO 05
+function retornaNumerosParesElevadosADois(array) {
+   const numeroParElevado = numero => {
+   return numero % 2 == 0
+ }
+   let paresElevado = array.filter(numeroParElevado)
+   return paresElevado
+}
 
 
 // // EXERCÍCIO 06
