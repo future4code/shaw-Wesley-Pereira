@@ -13,11 +13,11 @@ function retornaArrayInvertido(array) {
   return array.reverse()
 }
 
-// // EXERCÍCIO 03
-// function retornaArrayOrdenado(array) {
-//   const ordem = array.sort((a, b) => a - b);
-//   return ordem
-// }
+// EXERCÍCIO 03
+function retornaArrayOrdenado(array) {
+  const ordem = array.sort((a, b) => a - b);
+  return ordem
+}
 
 // // EXERCÍCIO 04
 // function retornaNumerosPares(array) {
