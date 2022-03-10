@@ -161,3 +161,7 @@ table {
 img {
     width: 60px;
 }
+
+tr {
+    font-family: 'Roboto', sans-serif;
+}
