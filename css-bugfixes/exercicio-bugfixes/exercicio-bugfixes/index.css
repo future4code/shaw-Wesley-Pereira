@@ -120,6 +120,11 @@ td button {
     color: black;
 }
 
+td button:hover {
+    background-color: rgb(2, 224, 253);
+    color: rgb(41, 56, 10);
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
