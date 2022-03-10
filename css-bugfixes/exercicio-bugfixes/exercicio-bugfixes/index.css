@@ -81,7 +81,7 @@ div img {
 
 #container-de-descricao>p {
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 100px;
     text-align: center;
 }
 
@@ -144,6 +144,9 @@ td button {
 a {
     display: block;
     text-align: center;
-    margin-top:20px;
+    margin-top:100px;
 }
 
+table {
+     margin: auto;
+}
