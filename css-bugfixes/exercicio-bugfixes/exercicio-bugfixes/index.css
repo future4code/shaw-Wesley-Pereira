@@ -150,3 +150,7 @@ a {
 table {
      margin: auto;
 }
+
+img {
+    width: 60px;
+}
