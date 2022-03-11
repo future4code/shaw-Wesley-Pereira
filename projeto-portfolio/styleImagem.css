@@ -1,0 +1,53 @@
+body {
+    background-image: url("/Imagens/2037528.jpg");
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: absolute;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.titulo1 {
+    color: rgb(151, 151, 151);
+    margin-top: 100px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.paragrafo-titulo1 {
+    color: rgb(151, 151, 151);
+    margin-top: 100px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.imagem3 {  
+    display: inline-block;
+    width: 400px;
+    margin-left: 25%;   
+    margin-top: 45px;
+    
+}
+
+.imagem4 {
+    display: inline-block;
+        
+    width: 400px;
+    margin-left: 40%;  
+
+   
+}
+
+.imagem5 { 
+    display: inline-block;
+    width: 500px;
+    margin-left: 55%;
+    
+    
+   
+}
