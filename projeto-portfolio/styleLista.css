@@ -75,3 +75,21 @@ body {
     background-color: rgb(220, 235, 156);
     color: rgb(41, 56, 10);
 }
+
+
+.contato {
+    color: whitesmoke;
+    align-items: center;
+    margin-top: 100px;
+    
+}
+
+
+form {
+    margin-left: 47%;
+}
+
+label {
+
+    color: whitesmoke;
+}
