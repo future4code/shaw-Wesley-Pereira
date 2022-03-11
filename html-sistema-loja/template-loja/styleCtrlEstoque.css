@@ -35,7 +35,6 @@ h2 {
 }
 
 .imagemLink {
-    display: inline-block;
     font-size:1em;
     background-color: rgba(0, 0, 0, 0.75);
     padding: 1em;

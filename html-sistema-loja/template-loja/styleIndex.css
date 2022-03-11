@@ -31,7 +31,6 @@ p {
 }
 
 .link {
-    display: inline-block;
     font-size:1em;
     background-color: rgba(56, 136, 100, 0.644);
     padding: 1em;
