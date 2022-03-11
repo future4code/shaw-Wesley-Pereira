@@ -12,14 +12,14 @@ body {
     background-size:cover;
 }
 
+
+
 .titulo1 {
     color: rgb(151, 151, 151);
     margin-top: 100px;
     text-align: center;
     font-size: 40px;
 }
-
-
 
 .paragrafo-titulo1 {
     color: rgb(151, 151, 151);
@@ -28,58 +28,50 @@ body {
     font-size: 20px;
 }
 
-.imagem3 {  
-    display: inline-block;
-    width: 400px;
-    margin-left: 25%;   
-    margin-top: 45px;
-    
+.frase-apresentacao {
+    display: block;
+    background-color: rgb(238, 96, 103);
+    color: aliceblue;
+    text-align: center;;
+    padding: 20px;
+    margin-top: 60px;
+    font-size: 18px;
+
 }
 
-.imagem4 {
-    display: inline-block;
-        
-    width: 400px;
-    margin-left: 40%;  
-    margin-top: 10px;
-   
-}
-
-.imagem5 { 
-    display: inline-block;
-    width: 400px;
-    margin-left: 55%;
-    margin-top: 10px;
-    
-   
-}
-
-.imagem3:hover {
-    opacity: 0.5;
-}
-
-.imagem4:hover {
-    opacity: 0.5;
-}
-
-.imagem5:hover {
-    opacity: 0.5;
-}
-
-
-button {
+.botao1 {
     background-color: rgb(238, 96, 103);
     border: 1px solid black;
     border-radius: 5px;
     color: whitesmoke;
     height: 30px;
-    margin-left: 50%;
+    
 
     margin-top: 20px;
+    margin-left: 45%;
 
 }
 
-button:hover{
+.botao1:hover{
+    background-color: rgb(220, 235, 156);
+    color: rgb(41, 56, 10);
+}
+
+.botao2 {
+    float: right;
+    background-color: rgb(238, 96, 103);
+    border: 1px solid black;
+    border-radius: 5px;
+    color: whitesmoke;
+    height: 30px;
+    
+    margin-top: 20px;
+    margin-right: 45%;
+    
+
+}
+
+.botao2:hover{
     background-color: rgb(220, 235, 156);
     color: rgb(41, 56, 10);
 }
