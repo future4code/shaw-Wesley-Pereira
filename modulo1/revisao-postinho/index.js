@@ -40,13 +40,13 @@ console.log(verificaSeEMaior(321, 2156));
 // CONDICIONAIS
 
 // Exercício 3------------------------------------------------------------------------------------
-            //A RESOLVER
+            
 // const cadastro = () => {
 //     const usuario = []
 
 //     //  Sua lógica aqui
 //     const nomeDoUsuario = prompt("Qual o seu nome?")
-//     let anoDeNascimento = prompt("Em que ano você nasceu?")
+//     let anoDeNascimento = Number(prompt("Em que ano você nasceu?"))
 //     let senhaDousuario = prompt("Qual a sua senha?")
 //     const nacionalidade = prompt("Qual a sua nacionalidade?")
 //     let idade =  2022 - anoDeNascimento 
@@ -60,7 +60,7 @@ console.log(verificaSeEMaior(321, 2156));
 
 
 //     if(idade >= 18 &&  senhaDousuario.length >= 6 && nacionalidade === "brasileiro"){
-//        return usuario.push(novoUsuario)
+//        console.log(usuario.push(novoUsuario))
         
 //     }else {
 //         return "Não cumpre com os requisitos"
@@ -85,40 +85,48 @@ console.log(verificaSeEMaior(321, 2156));
 
 // }
 
-console.log(login());
+// console.log(login());
 
-// Exercício 5----------------------------------------------------------------------------------------------------
+// Exercício 5----------------------------------------------------------------------------------------------------              // A RESOLVER
 
-const primeiraDose = () => {
+// const primeiraDose = () => {
     
-    //  Sua lógica aqui
-    let nome = prompt("Qual o seu nome?")
-    let vacina = prompt("Qual vacina tomou?")
-    let data = Number(prompt("Que dia é hoje?"))
-    let  tempo = 
-    return `Olá ${nome}! A próxima dose da ${vacina} é daqui a ${tempo} dias. Compareça no posto na data ${data}.`
-}
-console.log(primeiraDose())
+//     //  Sua lógica aqui
+//     let nome = prompt("Qual o seu nome?")
+//     let vacina = prompt("Qual vacina tomou?")
+//     let tempo
+//     let data 
+//     if(vacina === "Coronavac"){
+//     return `Olá ${nome}! A próxima dose da ${vacina} é daqui a ${tempo = "28 dias"} dias. Compareça no posto na data ${data}.`
+// }   else if(vacina === "Astrazenica"){
+//     return `Olá ${nome}! A próxima dose da ${vacina} é daqui a ${tempo = "90 dias"} dias. Compareça no posto na data ${data}.`
+// }   else{
+//     return `Olá ${nome}! A próxima dose da ${vacina} é daqui a ${tempo = "90 dias"} dias. Compareça no posto na data ${data}.`
+// }
+// }
+// console.log(primeiraDose())
 
 
 // LOOP+CONDICIONAL
 
 // Exercício 6 -------------------------------------------------------------------------------------
 
-const segundaDose = (nomeDoUsuario) => {
-    const usuarios = [
-        { nome: "Artur", imunizacao: "incompleta" },
-        { nome: "Barbara", imunizacao: "incompleta" },
-        { nome: "Carlos", imunizacao: "incompleta" }
-    ]
+// const segundaDose = (nomeDoUsuario) => {
+//     const usuarios = [
+//         { nome: "Artur", imunizacao: "incompleta" },
+//         { nome: "Barbara", imunizacao: "incompleta" },
+//         { nome: "Carlos", imunizacao: "incompleta" }
+//     ]
 
-    //  Sua lógica aqui
+//     //  Sua lógica aqui
+//     return  {...usuarios, nomeDoUsuario, imunizacao: "completa"}
 
-
-}
-console.log(segundaDose("Barbara"));
+// }
+// console.log(segundaDose("Barbara"));
 
 // Exercício 7 --------------------------------------------------------------------------------------
+
+
 
 const avisoAosAtrasados = () => {
     const usuarios = [
@@ -128,7 +136,9 @@ const avisoAosAtrasados = () => {
     ]
 
     //  Sua lógica aqui
+    const usuariosNaoImunizados = usuarios.filter((usuarios) => console.log(`Olá ${usuarios.nome}! Sua imunização está ${usuarios.imunizacao}, por favor volte ao postinho para tomar a segunda dose.` ))
 
+        
 }
 console.log(avisoAosAtrasados());
 
