@@ -241,23 +241,53 @@ const usuarios = [
 
 // console.log(cadastroDesafio());
 
-const loginDesafio = () => {
-    
-}
+// let senha = prompt("Digite a sua senha:")
+
+// const loginDesafio = () => {
+// //  Sua lógica aqui
+// for(let i = 0; i < usuarios.length; i++) {
+//     if(usuarios[i].senha === senha) {    
+//         console.log(`Usuarios ${usuarios[i].nome} logado !`)
+// }else {
+//         console.log(`Usuario não encontrado`)
+//     }
+// }
+
+// }
+
  
+// console.log(loginDesafio());
 
-(loginDesafio());
+// const primeiraDoseDesafio = () => {
+// //  Sua lógica aqui
+//     for(let i = 0;i<usuarios.length;i++){
+//     if(usuarios[i].imunizacao === `completa` ){
+//     usuarios[i].imunizacao = 'incompleta';
+//     }
 
-const primeiraDoseDesafio = () => {
-//  Sua lógica aqui
-}
-console.log(primeiraDoseDesafio())
-const segundaDoseDesafio = (nomeDoUsuario) => {
-    //  Sua lógica aqui
-}
-console.log(segundaDoseDesafio("ALGUM NOME AQUI"));
+//  } return usuarios
+
+// }
+ 
+    
+// console.log(primeiraDoseDesafio())
+
+
+// const segundaDoseDesafio = (nomeDoUsuario) => {
+//     //  Sua lógica aqui
+//     const resultado = usuarios.map((item) => {
+//         return item.nome === nomeDoUsuario ? {...item, imunizacao: "completa"} : item
+//     })
+//     return resultado
+// } 
+// console.log(segundaDoseDesafio("Artur"));
 
 const avisoAosAtrasadosDesafio = () => {
     //  Sua lógica aqui
+    usuarios.map((item) => {
+        if(item.imunizacao === "incompleta") {
+            console.log(`Olá ${item.nome}! Sua imunização está ${item.imunizacao}, por favor volte ao postinho para tomar a segunda dose.`)     
+        }
+    })
 }
 console.log(avisoAosAtrasadosDesafio());
