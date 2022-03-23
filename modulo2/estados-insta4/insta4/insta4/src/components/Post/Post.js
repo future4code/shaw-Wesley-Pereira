@@ -49,6 +49,21 @@ class Post extends React.Component {
   }
 
   onClickCurtida = () => {
+this.setState({
+  curtido: !this.state.curtido
+})
+if(this.state.numeroCurtidas){
+  this.setState({numeroCurtidas: this.state.numeroCurtidas -1
+  })
+}else{
+  this.setState({numeroCurtidas:this.state.numeroCurtidas + 1
+  })
+}
+
+    // this.setState({
+    //   curtida: true,
+    //   numeroCurtidas: !this.state.numeroCurtidas
+    // })
     console.log('Curtiu!')
   }
 
@@ -107,3 +122,15 @@ class Post extends React.Component {
 }
 
 export default Post
+
+
+
+// Exercício 4:
+// Eles ficam dentro do padding do PostFooter (dentro da caixinha).
+
+//Exercício 8:
+//Aparece e desaparece com o espaço para comentar.
+//Exercício 9:
+//Ele acrescenta +1 dentro do padding do PostFooter (dentro da caixinha no lado esquedo)
+//Exercício 10:
+//Acrescenta +1 no icone de comentario.

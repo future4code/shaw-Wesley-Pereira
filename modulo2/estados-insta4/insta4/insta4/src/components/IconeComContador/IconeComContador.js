@@ -14,3 +14,9 @@ export function IconeComContador(props) {
 		<p>{props.valorContador}</p>
 	</IconContainer>
 }
+
+
+
+
+//Exercício 5
+// Ele é responsavel pelo icone curtida, caso a imagem nao apareça ele escreve "Icone" e ele acrescenta +1 no contador com o click.
