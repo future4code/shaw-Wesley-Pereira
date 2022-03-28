@@ -28,12 +28,19 @@ export default class App extends React.Component {
         { value: 'option2', display: 'Ensino médio completo' },
         { value: 'option3', display: 'Ensino superior incompleto' },
         { value: 'option4', display: 'Ensino superior completo' },
+      ],
+      selectOptions2: [
+        { value: '', display: 'Nenhum' },
+        { value: 'option1', display: 'Curso técnico' },
+        { value: 'option2', display: 'Curso de inglês' },
       ]
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit2 = this.handleSubmit2.bind(this);
     this.handleSubmit3 = this.handleSubmit3.bind(this);
+    this.handleSubmit4 = this.handleSubmit4.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
+    
   }
 
   handleChange(event) {
@@ -50,22 +57,26 @@ export default class App extends React.Component {
     event.preventDefault();
     this.setState({ page: 2 });
   }
-  
+
   handleSubmit3(event) {
     event.preventDefault();
-    this.setState({ page: 2 });
+    this.setState({ page: 3 });
   }
 
+  handleSubmit4(event) {
+    event.preventDefault();
+    this.setState({ page: 4 });
+  }
   
 
   render() {
-    const { page, name, email, age, select, corse, selectOptions } = this.state;
+    const { page, name, email, age, select, corse, selectOptions, selectOptions2 } = this.state;
     return (
       <Alinhar>
         {page === 1 &&
           <div>
           <div>
-            <h1>Etapa1 - Dados Gerais</h1>            
+            <h1>Etapa 1 - Dados Gerais</h1>            
           </div>
             
             
@@ -109,9 +120,9 @@ export default class App extends React.Component {
           </div>
         }
         {page === 2 &&
-          <div>
-            <div>
-            <h1>Etapa2 - Informações do Ensino Superio</h1>            
+        <form onSubmit={this.handleSubmit3}>
+           <div>
+            <h1>Etapa 2 - Informações do Ensino Superio</h1>            
           </div>
             5. Qual o seu curso?
               <div>
@@ -128,15 +139,13 @@ export default class App extends React.Component {
               <div>
               <button type="submit">Próxima etapa</button>
               </div>
-            <h1>Thank You</h1>
-            <p>Thank you for your message.</p>
-      
-          </div>
+        </form>
         }
         {page === 3 &&
+          <form onSubmit={this.handleSubmit4}>
           <div>
             <div>
-            <h1>Etapa3 - Informações Gerais de Ensino</h1>            
+            <h1>Etapa 3 - Informações Gerais de Ensino</h1>            
           </div>
             7. Por que você não terminou um curso de graduação?
               <div>
@@ -148,7 +157,7 @@ export default class App extends React.Component {
               <div>
               <Espaço>
                 <select name="select" value={select} onChange={this.handleSelectChange}>
-                  {selectOptions.map(option => (
+                  {selectOptions2.map(option => (
                     <option key={option.value} value={option.value}>
                       {option.display}
                     </option>
@@ -156,14 +165,22 @@ export default class App extends React.Component {
                 </select>
               </Espaço>
               <div>
-              <button type="submit">Próxima etapa</button>
+              <button type="submit">Eviar</button>
               </div>
               </div>
-            <h1>Thank You</h1>
-            <p>Thank you for your message.</p>
-      
           </div>
+          </form>
+
+           
         }
+        {page === 4 &&
+        
+           <div>
+            <h1>O FORMULÁRIO ACABOU</h1>
+            <p>Muito obrigado por participar! Entraremos em contato!</p>
+              </div>
+        
+   }
       </Alinhar>
     );
   };
