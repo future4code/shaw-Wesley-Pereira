@@ -10,7 +10,7 @@ const headers = {
 const baseUrl =
   'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
 
-  const message = alert('Usuário cadastrado com sucesso!')
+const message = alert('Usuário cadastrado com sucesso!')
 
 export default class App extends React.Component {
   state = {
@@ -29,7 +29,7 @@ export default class App extends React.Component {
       .get(url, headers)
       .then((res) => {
         this.setState({
-          users: res.data.result.list,
+          users: res.data,
         })
       })
       .catch((err) => {
@@ -52,7 +52,7 @@ export default class App extends React.Component {
         })
       })
       .catch((err) => {
-        console.log(err.response.data.message)
+        alert('Usuario cadastrado com sucesso!')
       })
   }
   onChangeName = (event) => {
@@ -66,40 +66,41 @@ export default class App extends React.Component {
     })
   }
   removeUser = (userId) => {
-   const { users } = this.state;
-   const newUsers = users.findIndex(u => u.id === users.id);
-   this.setState({users: newUsers })
+    const url =
+      'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users' +
+      userId
+    axios.delete(url, headers).then(() => {
+      this.getAllusers()
+    })
   }
   render() {
     const componentsUsers = this.state.users.map((user) => {
-      return (
-        <li key={user.id}>
-          {user.name} - {user.email}
-        </li>
-      )
+      return <li key={user.id}>{user.name}</li>
     })
     return (
       <div>
         <label>
           Nome:
-        <input
-          placeholder="Nome"
-          value={this.state.inputName}
-          onChange={this.onChangeName}
-        />
+          <input
+            placeholder="Nome"
+            value={this.state.inputName}
+            onChange={this.onChangeName}
+          />
         </label>
         <label>
           Email:
-        <input
-          placeholder="Email"
-          value={this.state.inputEmail}
-          onChange={this.onChangeEmail}
-        />
+          <input
+            placeholder="Email"
+            value={this.state.inputEmail}
+            onChange={this.onChangeEmail}
+          />
         </label>
         <button onClick={this.postUser}>Cadastrar</button>
+        <div></div>
 
-        
-        <ul>{componentsUsers} <button onClick={this.removeUser}>Remover</button></ul>
+        <ul>
+          {componentsUsers} <button onClick={this.removeUser}>Remover</button>
+        </ul>
       </div>
     )
   }
