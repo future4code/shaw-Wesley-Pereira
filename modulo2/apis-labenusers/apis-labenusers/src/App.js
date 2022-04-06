@@ -1,106 +1,41 @@
 import React from 'react'
 import axios from 'axios'
-
-const headers = {
-  headers: {
-    Authorization: 'Wesley-Silva-Shaw',
-  },
-}
-
-const baseUrl =
-  'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
-
-const message = alert('Usuário cadastrado com sucesso!')
+import TelaCadastro from './components/TelaCadastro'
+import TelaListaUsuarios from './components/TelaListaUsuarios'
 
 export default class App extends React.Component {
   state = {
-    users: [],
-    inputName: '',
-    inputEmail: '',
+    telaAtual: 'cadastro',
   }
-  componentDidMount() {
-    this.getAllusers()
-  }
-  getAllusers = () => {
-    const url =
-      'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
 
-    axios
-      .get(url, headers)
-      .then((res) => {
-        this.setState({
-          users: res.data,
-        })
-      })
-      .catch((err) => {
-        console.log(err.response.data)
-      })
-  }
-  postUser = () => {
-    const body = {
-      name: this.state.inputName,
-      email: this.state.inputEmail,
+  escolheTela = () => {
+    switch (this.state.telaAtual) {
+      case 'cadastro':
+        return <TelaCadastro irParaLista={this.irParaLista} />
+      case 'lista':
+        return <TelaListaUsuarios irParaCadastro={this.irParaCadastro} />
+      default:
+        return <div> Erro Página não encontrada </div>
     }
+  }
 
-    axios
-      .post(`${baseUrl}`, body, headers)
-      .then(() => {
-        this.getAllUsers()
-        this.setState({
-          inputName: '',
-          inputEmail: '',
-        })
-      })
-      .catch((err) => {
-        alert('Usuario cadastrado com sucesso!')
-      })
-  }
-  onChangeName = (event) => {
+  irParaCadastro = () => {
     this.setState({
-      inputName: event.target.value,
+      telaAtual: 'cadastro',
     })
   }
-  onChangeEmail = (event) => {
+
+  irParaLista = () => {
     this.setState({
-      inputEmail: event.target.value,
+      telaAtual: 'lista',
     })
   }
-  removeUser = (userId) => {
-    const url =
-      'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users' +
-      userId
-    axios.delete(url, headers).then(() => {
-      this.getAllusers()
-    })
-  }
+
+
   render() {
-    const componentsUsers = this.state.users.map((user) => {
-      return <li key={user.id}>{user.name}</li>
-    })
     return (
       <div>
-        <label>
-          Nome:
-          <input
-            placeholder="Nome"
-            value={this.state.inputName}
-            onChange={this.onChangeName}
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            placeholder="Email"
-            value={this.state.inputEmail}
-            onChange={this.onChangeEmail}
-          />
-        </label>
-        <button onClick={this.postUser}>Cadastrar</button>
-        <div></div>
-
-        <ul>
-          {componentsUsers} <button onClick={this.removeUser}>Remover</button>
-        </ul>
+        {this.escolheTela()}
       </div>
     )
   }
