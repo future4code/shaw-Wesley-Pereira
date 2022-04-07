@@ -1,0 +1,48 @@
+body {
+    background-image: url("/Pasta-Imagens/ARTEBARROCA1.png");
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    position: absolute;
+    opacity: 10;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    }
+
+h1 {
+    font-size:3em;
+    color: #470502;
+    text-align: center;
+}
+
+p {
+    background: rgba(0, 0, 0, 0.75);
+    font-size:1.3em;
+    color: rgb(120, 44, 206);
+    padding: 1em;
+    border-radius: 0.5em;
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
+}
+
+.link {
+    font-size:1em;
+    background-color: rgba(56, 136, 100, 0.644);
+    padding: 1em;
+    border-radius:0.5em;
+
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
+       
+}
+
+.imagem-em-baixo {
+    text-align: center;
+    margin-top:400px;
+}
