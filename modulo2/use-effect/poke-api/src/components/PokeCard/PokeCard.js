@@ -1,21 +1,23 @@
 import React from "react";
 import axios from "axios";
+import { useState, useEffect } from "react";
 
-class PokeCard extends React.Component {
-  state = {
+ function PokeCard (props) {
+  // state = {
     // valor do estado que guarda infos e foto do pokemon
-    pokemon: {}
-  };
+  //   pokemon: {}
+    const [pokemon, setPokemon] = useState({});
+  // };
 
   // método que roda após a montagem do componente
-  componentDidMount() {
-    this.pegaPokemon(this.props.pokemon);
-  }
+  // componentDidMount() {
+  //   this.pegaPokemon(this.props.pokemon);
+  // }
 
   // método que roda após a atualização do componente.
   // Um dos casos de atualização do componente é a
   // mudança da props que está sendo passado pra ele
-  componentDidUpdate(prevProps) {
+  // componentDidUpdate(prevProps) {
     // aqui, é feita uma verificação da props anterior com a props atual.
     // Caso a props anterior seja diferente da props atual,
     // a função pegaPokemon é chamada.
@@ -33,15 +35,16 @@ class PokeCard extends React.Component {
       .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
       .then(response => {
         // guarda as infos do pokemon no estado
-        this.setState({ pokemon: response.data });
+        setPokemon({ pokemon: response.data });
       })
       .catch(err => {
         console.log(err);
       });
   };
 
-  render() {
-    const pokemon = this.state.pokemon;
+  useEffect(())
+
+    const pokemon = pokemon
 
     return (
       <div>
@@ -53,7 +56,7 @@ class PokeCard extends React.Component {
         )}
       </div>
     );
-  }
+  
 }
 
 export default PokeCard;
