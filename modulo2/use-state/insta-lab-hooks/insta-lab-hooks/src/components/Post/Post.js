@@ -14,7 +14,7 @@ const Post = (props) => {
     const [numeroCurtidas, setNumeroCurtidas] = useState(0)
     const [comentado, setComentado] = useState(false)
     const [numeroComentarios, setNumeroComentarios] = useState(0)
-    
+    const [postaComentario, setPostaComentario] = useState([])
 
     const onClickCurtida = () => {
     setCurtido(!curtido)
@@ -27,21 +27,30 @@ const Post = (props) => {
 
   const onClickComentario = () => {
     setComentado(!comentado)
-    if(comentado) {
-      setNumeroComentarios(numeroComentarios + 1)
+        
     
-    }
   };
 
   const enviarComentario = (comentario) => {
-    
+    setNumeroComentarios(numeroComentarios + 1);
+    const novoComentario = [...postaComentario, comentario];
+    setPostaComentario(novoComentario);
+
   }
 
   const iconeCurtida = curtido ? iconeCoracaoPreto : iconeCoracaoBranco
 
   
 
-  const caixaDeComentario = comentado ? <SecaoComentario enviarComentario={enviarComentario}/> : null
+  const caixaDeComentario = comentado ? <SecaoComentario enviarComentario={enviarComentario}/> : (
+    postaComentario.map((comentario) => {
+      return (
+        <CommentContainer>
+          <p>{comentario}</p>
+        </CommentContainer>
+      )
+    })
+  )
 
   return (
     <PostContainer>
