@@ -1,25 +1,74 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import Styled from 'styled-components'
+import Icon1 from './img/hug.png'
 
-function App() {
+const AreaToda = Styled.div`
+  
+background-color: #383838;
+  width: 398px;
+  height: 598px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+`
+const Footer = Styled.div`
+  
+  margin-top: 29rem;
+  `
+const Header = Styled.div`
+display: flex;
+`
+  
+  const Astromatch = Styled.div`
+  display: flex;
+  
+  margin-left: 10rem;
+  
+  `
+  const BotaoIcone = Styled.div`
+  display: flex; 
+  margin-top: 0.5rem;
+  margin-left: 6rem;
+  
+  `
+
+
+
+  const Tela = Styled.div`
+  border-box: border-box;
+  width: 100%;
+  `
+  const Button = Styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  `
+
+export default function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <AreaToda>
+      <Header>
+    <Astromatch>
+      <p>astromatch</p>
+      </Astromatch>
+      <BotaoIcone>
+      <img height={40} src={Icon1} alt="icon"/>
+      </BotaoIcone>
+      </Header>
+      <hr />
+      <Tela>
+        pessoas
+      </Tela>
+      <Footer>
+        <Button>
+          <button>X</button>
 
-export default App;
+          <button>S2</button>
+        </Button>
+      </Footer>
+    </AreaToda>
+  )
+}
