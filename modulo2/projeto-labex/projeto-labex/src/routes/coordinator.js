@@ -25,3 +25,7 @@ export const goToCreateTrip = (navigate) => {
 export const goToDetailTrip = (navigate) => {
   navigate('/tripDetail')
 }
+
+export const loginToAdm = (navigate) => {
+  navigate('/tripDetail')
+}
