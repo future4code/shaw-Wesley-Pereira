@@ -1,9 +1,18 @@
 import React from 'react';
+import Header from '../../components/Header/Header';
+import { PostContainer, TextareaStyled } from './style';
+import PostButton from '../../components/PostButton/PostButton';
+import { Hr } from '../../components/LoginButton/style';
 
 function PostPage() {
     return (
         <div>
-            <h1>POST PAGE</h1>
+            <Header />
+            <PostContainer>
+            <TextareaStyled placeholder="Escreva seu post..."></TextareaStyled>
+            <PostButton />
+            <Hr/>
+            </PostContainer>
         </div>
     );
 }
