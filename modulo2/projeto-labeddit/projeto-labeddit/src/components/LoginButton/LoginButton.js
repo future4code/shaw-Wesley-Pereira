@@ -5,6 +5,7 @@ function LoginButton() {
     return (
         <div>
             <Link to="/login"></Link>
+            teste
         </div>
     );
 }
