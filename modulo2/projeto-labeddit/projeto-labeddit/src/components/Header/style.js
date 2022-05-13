@@ -14,7 +14,7 @@ export const ImageContainer = styled.div`
   padding-top: 10px;
 `
 
-export const BottonContainer = styled.div`
+export const BottonContainer = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,4 +27,5 @@ export const BottonContainer = styled.div`
   font-size: 18px;
   line-height: 25px;
   cursor: pointer;
+  border: none;
 `
