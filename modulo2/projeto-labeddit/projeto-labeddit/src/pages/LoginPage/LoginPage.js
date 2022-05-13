@@ -1,11 +1,13 @@
 import React from 'react';
 import ImageMonted from '../../components/ImageMonted/ImageMonted';
-import LoginButton from '../../components/LoginButton/LoginButton';
+
 import LoginForm from '../../components/LoginForm/LoginForm';
+import useUnprotectedPage from '../../Hooks/useUnprotectedPage';
 import { ButtonContainer, FormContainer, LogoContainer, Span } from './style';
 import { H1 } from './style';
 
 function LoginPage() {
+    useUnprotectedPage();
     return (
         <div>
             <LogoContainer>
@@ -19,7 +21,7 @@ function LoginPage() {
             </FormContainer>
 
             <ButtonContainer>
-            <LoginButton />
+            {/* <LoginButton /> */}
             </ButtonContainer>
         </div>
     );

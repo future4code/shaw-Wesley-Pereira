@@ -1,18 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ButtonStyled1, ButtonStyled2, linkStyle1, LinkStyled1, linkStyle2, LinkStyled2, Hr } from './style';
+import { ButtonStyled1, ButtonStyled2, linkStyle2, LinkStyled2, Hr } from './style';
 
 
 
 
 function LoginButton() {
+
+
+    function handleAdd() {
+        console.log('Login realizado com sucesso!')
+      }
+
     return (
         <div>
-        <ButtonStyled1>
-                <LinkStyled1>
-            <Link to="/login" style={linkStyle1}>Continuar</Link>
-            </LinkStyled1>
-            </ButtonStyled1>
+        
+                
+            <ButtonStyled1  onClick={handleAdd} >Login</ButtonStyled1>
+            
+            
             <Hr/>
             <ButtonStyled2>
             <LinkStyled2>

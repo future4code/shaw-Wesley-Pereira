@@ -8,7 +8,7 @@ function FeedButton() {
       <ButtonStyled1>
         <LinkStyled1>
           <Link to="/login" style={linkStyle1}>
-            Responder
+            Postar
           </Link>
         </LinkStyled1>
       </ButtonStyled1>

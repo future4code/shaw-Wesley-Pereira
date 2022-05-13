@@ -32,6 +32,6 @@ color: #4088cb;
 font-family: 'Noto Sans';
 `
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.button`
 padding-top: 1.5rem;
 `

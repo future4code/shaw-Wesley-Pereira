@@ -1,13 +1,17 @@
 import React from 'react'
 import Header from '../../components/Header/Header'
 import SignupForm from '../../components/SignupForm/SignupForm'
-import { ButtonContainer, Eslogan, FormContainer, SpanBlue, SpanContainer } from './style'
+import { Eslogan, FormContainer, SpanBlue, SpanContainer } from './style'
 import Checkbox from '@mui/material/Checkbox'
-import SignupButton from '../../components/SignupButton/SignupButton'
+
+import { ButtonContainer } from '../LoginPage/style'
+import useUnprotectedPage from '../../Hooks/useUnprotectedPage'
+
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } }
 
 function SignupPage() {
+  useUnprotectedPage();
   return (
     <div>
       <Header />
@@ -28,7 +32,7 @@ function SignupPage() {
         </span>
       </SpanContainer>
       <ButtonContainer>
-      <SignupButton />
+      {/* <SignupButton /> */}
       </ButtonContainer>
     </div>
   )

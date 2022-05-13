@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ButtonStyled1 = styled.div`
+export const ButtonStyled1 = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,6 +14,7 @@ export const ButtonStyled1 = styled.div`
   font-weight: 700;
   font-size: 18px;
   line-height: 25px;
+  border: none;
 `
 export const ButtonStyled2 = styled.div`
   display: flex;
