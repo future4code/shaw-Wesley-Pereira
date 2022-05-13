@@ -35,7 +35,7 @@ function SignupPage() {
       {/* <SignupButton /> */}
       </ButtonContainer>
     </div>
-  )
+  );
 }
 
 export default SignupPage
