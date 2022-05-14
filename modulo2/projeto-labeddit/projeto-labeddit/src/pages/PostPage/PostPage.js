@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
-import { Container, ContainerId, ContainerMenssage, PostContainer, TextareaStyled } from './style'
+import {
+  Container,
+  ContainerId,
+  ContainerMenssage,
+  PostContainer,
+  TextareaStyled,
+  TextareaStyled2,
+} from './style'
 import PostButton from '../../components/PostButton/PostButton'
 import { Hr } from '../../components/LoginButton/style'
 import useProtectedPage from '../../Hooks/useProtectedPage'
@@ -8,53 +15,82 @@ import CardPost from '../../constants/Card/CardPost'
 import useRequestData from '../../Hooks/useRequestData'
 import { BASE_URL } from '../../constants/url'
 import axios from 'axios'
-
+import { goToFeed } from '../../routes/coordinator'
+import { useNavigate } from 'react-router-dom'
+import useForm from '../../Hooks/useForm'
 
 function PostPage() {
   useProtectedPage()
- 
-  const [post, setPost] = useState(null);
+  const navigate = useNavigate()
+  const [post, setPost] = useState(null)
+  const [form, onChange, clear] = useForm({ title: "", body: "" })
+
+
+  
+  const createPost =  () => {
+    axios.post(`${BASE_URL}/posts`, form, {
+      headers: {
+        
+        Authorization: localStorage.getItem("token") 
+      }
+    }).then((response) => {
+      console.log(response.data)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
+
 
   useEffect(() => {
-      axios.get(`${BASE_URL}/posts`, {
-          headers: {
-              Authorization: localStorage.getItem("token")
-          }
-      }).then((response) => {
-          setPost(response.data);
+    axios
+      .get(`${BASE_URL}/posts`, {
+        headers: {
+          Authorization: localStorage.getItem('token'),
+        },
       })
-  }, [])
+      .then((response) => {
+        setPost(response.data)
+      })
+  }, [post])
 
-  if(!post) return null;
+  if (!post) return null
 
-  console.log(post)
+  const onClickCard = (id) => {
+    goToFeed(navigate, id)
+  }
+
+  const postLoad = post.map((post) => {
+    return (
+      <Container onClick={() => onClickCard(post.id)} key={post.id}>
+        <ContainerId>enviado por: {post.title}</ContainerId> <br />
+        
+        <ContainerMenssage>{post.body}</ContainerMenssage>
+      </Container>
+    )
+  })
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    createPost()
+    clear()
+  }
   
-    const postLoad = post.map((post) => {
-          return(
-            <Container>
-            <ContainerId> 
-              enviado por: {post.userId}
-              </ContainerId> <br/>
-            
-            <ContainerMenssage>  
-              {post.body} 
-              </ContainerMenssage>
-            </Container>
-           
-          )
-    })
   return (
     <div>
       <Header />
 
       <PostContainer>
-        <TextareaStyled placeholder="Escreva seu post..."></TextareaStyled>
-        <PostButton />
-        <Hr />
-        
-        {postLoad}
+        <form onSubmit={onSubmit}>
+        <TextareaStyled2 name={"title"} value={form.title} onChange={onChange}  placeholder="Nome:"></TextareaStyled2>
+        <TextareaStyled name={"body"}  value={form.body} onChange={onChange}  placeholder="Escreva seu post..."></TextareaStyled>
        
+        <PostButton />
+        </form>
         
+        <Hr />
+
+        {postLoad}
       </PostContainer>
     </div>
   )

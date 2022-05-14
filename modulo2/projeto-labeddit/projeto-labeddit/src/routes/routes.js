@@ -15,7 +15,7 @@ function RoutesApp() {
       <Routes>
 
         <Route path="/" element={<LoginPage />} />
-        <Route path="/feed" element={<FeedPage />} />
+        <Route path="/feed/:id" element={<FeedPage />} />
         <Route path="/post" element={<PostPage />} />
         <Route path="/signup" element={<SignupPage />} />
 

@@ -15,6 +15,7 @@ export const ButtonStyled1 = styled.button`
   font-size: 18px;
   line-height: 25px;
   border: none;
+  margin: auto;
 `
 
 export const LinkStyled1 = styled.div`

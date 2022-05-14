@@ -3,7 +3,7 @@ import axios from "axios";
 import { BASE_URL } from "../constants/url";
 
 const useRequestData = () => {
-    // const [data, setData] = useState(initialData);
+    
     const [post, setPost] = useState(null);
 
     useEffect(() => {
@@ -27,22 +27,7 @@ const useRequestData = () => {
     )
 
 
-    // useEffect(() => {
-    //     axios.get(url, {
-    //         headers: {
-    //             Authorization: localStorage.getItem("token")
-    //         }
-    //     })
-    //     .then((response) => {
-    //         setData(response.data);
-    //     })
-    //     .catch((error) => {
-    //         console.log(error);
-            
-    //     })
-    // }, [url]);
-
-    // return (data)
+    
 }
 
 

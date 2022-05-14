@@ -7,7 +7,16 @@ export const TextareaStyled = styled.textarea`
   background: #ededed;
   border-radius: 12px;
   padding: 15px;
-  margin: 1rem;
+  margin: 0rem 1rem 1rem 1rem;
+`
+export const TextareaStyled2 = styled.textarea`
+  width: 364px;
+  height: 12px;
+  border: none;
+  background: #ededed;
+  border-radius: 12px;
+  padding: 15px 15px 25px 15px;
+  margin: 1rem 1rem 0rem 1rem;
 `
 
 export const PostContainer = styled.div`
@@ -27,6 +36,7 @@ export const Container = styled.div`
   border-radius: 12px;
   border: 1px solid #e6e6e6;
   padding: 1rem;
+  margin-bottom: 1rem;
 `
 
 export const ContainerId = styled.div`
