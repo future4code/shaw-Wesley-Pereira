@@ -11,20 +11,19 @@ import {
 import PostButton from '../../components/PostButton/PostButton'
 import { Hr } from '../../components/LoginButton/style'
 import useProtectedPage from '../../Hooks/useProtectedPage'
-import CardPost from '../../constants/Card/CardPost'
-import useRequestData from '../../Hooks/useRequestData'
 import { BASE_URL } from '../../constants/url'
 import axios from 'axios'
 import { goToFeed } from '../../routes/coordinator'
 import { useNavigate } from 'react-router-dom'
 import useForm from '../../Hooks/useForm'
+import { CircularProgress } from '@mui/material'
 
 function PostPage() {
   useProtectedPage()
   const navigate = useNavigate()
   const [post, setPost] = useState(null)
   const [form, onChange, clear] = useForm({ title: "", body: "" })
-
+  const [isLoading, setIsLoading] = useState(false)
 
   
   const createPost =  () => {
@@ -78,6 +77,7 @@ function PostPage() {
   
   return (
     <div>
+      
       <Header />
 
       <PostContainer>
@@ -85,7 +85,9 @@ function PostPage() {
         <TextareaStyled2 name={"title"} value={form.title} onChange={onChange}  placeholder="Nome:"></TextareaStyled2>
         <TextareaStyled name={"body"}  value={form.body} onChange={onChange}  placeholder="Escreva seu post..."></TextareaStyled>
        
-        <PostButton />
+        <PostButton >
+          {isLoading ? <CircularProgress color={"inherit"}/>: 'Postar'}
+        </PostButton>
         </form>
         
         <Hr />
