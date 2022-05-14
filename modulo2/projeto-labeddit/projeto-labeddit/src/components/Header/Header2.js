@@ -3,7 +3,7 @@ import {  Link, useNavigate } from 'react-router-dom'
 import { goToLogin } from '../../routes/coordinator'
 import ButtonX from './ButtonX'
 import ImageMonted from './ImageMonted/ImageMonted'
-import { BottonContainer, HeaderContainer, ImageContainer } from './style'
+import { BottonContainer, HeaderContainer, ImageContainer, ImageContainer2 } from './style'
 
 function Header() {
   
@@ -32,10 +32,10 @@ function Header() {
 
   return (
     <HeaderContainer>
-      
-      <ImageContainer>
+      <ButtonX />
+      <ImageContainer2>
         <ImageMonted />
-      </ImageContainer>
+      </ImageContainer2>
       <BottonContainer onClick={rightButtonAction} >
         {rightButton}
       </BottonContainer>

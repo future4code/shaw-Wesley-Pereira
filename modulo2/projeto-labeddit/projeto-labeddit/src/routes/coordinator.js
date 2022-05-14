@@ -8,3 +8,8 @@ export const goToPost = (navigate) => {
 export const goToLogin = (navigate) => {
     navigate('/')
 }
+
+
+export const goToFeed = (navigate) => {
+    navigate('/feed')
+}

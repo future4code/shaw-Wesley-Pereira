@@ -1,16 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { ButtonStyled1, linkStyle1, LinkStyled1 } from './style'
+import {  useNavigate } from 'react-router-dom'
+import { goToFeed } from '../../routes/coordinator'
+import { ButtonStyled1 } from './style'
 
 function FeedButton() {
+
+  const navigate = useNavigate()
+
   return (
     <div>
-      <ButtonStyled1>
-        <LinkStyled1>
-          <Link to="/login" style={linkStyle1}>
+      <ButtonStyled1 onClick={() => goToFeed(navigate)}>
+        
+           
             Postar
-          </Link>
-        </LinkStyled1>
+       
       </ButtonStyled1>
     </div>
   )
