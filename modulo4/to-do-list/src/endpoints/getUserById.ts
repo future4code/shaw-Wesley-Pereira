@@ -4,10 +4,6 @@ import selectUserById from '../data/selectUserById'
 
 export default async function geteUsersById(req: Request, res: Response) {
   try {
-    if (!req.body.name || !req.body.email || !req.body.nickname) {
-      res.send('Missing parameters')
-    }
-
     const user = await selectUserById(req.params.id)
 
     if (!user) {
