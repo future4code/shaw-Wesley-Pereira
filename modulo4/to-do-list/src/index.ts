@@ -4,6 +4,8 @@ import dotenv from 'dotenv'
 import createUsers from './endpoints/createUsers'
 import geteUsersById from './endpoints/getUserById'
 import editUsers from './endpoints/editUsers'
+import createTask from './endpoints/createTask'
+import getTaskById from './endpoints/getTaskById'
 
 dotenv.config()
 
@@ -26,6 +28,8 @@ app.use(express.json())
 app.put('/user', createUsers)
 app.get('/user/:id', geteUsersById)
 app.post('/user/edit/:id', editUsers)
+app.put('/task', createTask)
+app.get('/task/:id', getTaskById)
 
 app.listen(3003, () => {
   console.log('Server is running on port 3003')
