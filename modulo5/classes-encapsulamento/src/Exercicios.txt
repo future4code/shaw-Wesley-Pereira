@@ -1,0 +1,26 @@
+Exercicio 1
+
+a)Construtores são basicamente funções de inicialização de uma classe, as quais são invocadas no momento em que objetos desta classe são criadas.
+Chamando o constructor.
+
+constructor(
+     cpf: string,
+     name: string,
+     age: number,
+  ) {
+     console.log("Chamando o construtor da classe UserAccount")
+     this.cpf = cpf;
+     this.name = name;
+     this.age = age;
+  }
+
+  b) Nenhum deu erro.
+
+  c) Variáveis privadas só podem ser acessadas de dentro da
+própria classe (usando a keyword this)
+
+
+Exercicio 2
+
+No index.ts
+
