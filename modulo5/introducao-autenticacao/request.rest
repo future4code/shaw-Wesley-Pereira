@@ -1,0 +1,23 @@
+# @name signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Norman Osbourne", 
+   "nickname": "Green Goblin", 
+   "email": "token4@oscorp.com" ,
+   "password": "ihatepeter"
+}
+
+###
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF5bG9hZCI6eyJpZCI6IjNkZTVkODY4LWIzZDQtNGQwMi1iODBlLTcyN2EyODBhNzljOSJ9LCJpYXQiOjE2NTYzNzc3ODAsImV4cCI6MTY1NjQxMzc4MH0.rt2_20KJBqHuy2o5SlM8J69R71F3EuT2fl5u-wFKjcU
+
+PUT http://localhost:3003/user/edit
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+   "name": "DOENDE MACABRO" 
+}
